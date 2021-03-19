@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "projet1": {
+        "projet3": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -42,7 +42,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/projet1",
+                        "outputPath": "dist/projet3",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -54,9 +54,11 @@
                         ],
                         "styles": [
                             "./node_modules/bootstrap/dist/css/bootstrap.css",
-                            "styles.scss"
+                            "src/styles.scss"
                         ],
-                        "scripts": []
+                        "scripts": [
+
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -88,18 +90,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "projet1:build"
+                        "browserTarget": "projet3:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "projet1:build:production"
+                            "browserTarget": "projet3:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "projet1:build"
+                        "browserTarget": "projet3:build"
                     }
                 },
                 "test": {
@@ -114,6 +116,7 @@
                             "src/assets"
                         ],
                         "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.css",
                             "src/styles.scss"
                         ],
                         "scripts": []
