@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import firebase from 'firebase';
-import { config } from 'process';
+//import * as firebase from 'firebase';
+import  firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,10 @@ import { config } from 'process';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
   constructor(){
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const config = {
+    const firebaseConfig = {
       apiKey: "AIzaSyCGvqwmcW0t14XtkQn4syrHEJIR8jtiON4",
       authDomain: "gestion-livre-6ce39.firebaseapp.com",
       projectId: "gestion-livre-6ce39",
@@ -19,6 +22,6 @@ export class AppComponent {
       appId: "1:398310891232:web:3082832adcc402a65dfa85",
       measurementId: "G-8S92GV9Y4C"
     };
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseConfig);
   }
 }
