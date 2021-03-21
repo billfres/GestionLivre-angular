@@ -16,6 +16,7 @@ export class AppComponent {
     const firebaseConfig = {
       apiKey: "AIzaSyCGvqwmcW0t14XtkQn4syrHEJIR8jtiON4",
       authDomain: "gestion-livre-6ce39.firebaseapp.com",
+      databaseURL: "https://gestion-livre-6ce39-default-rtdb.firebaseio.com/",
       projectId: "gestion-livre-6ce39",
       storageBucket: "gestion-livre-6ce39.appspot.com",
       messagingSenderId: "398310891232",
