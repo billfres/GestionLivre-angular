@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import firebase from 'firebase';
 import { Book } from 'src/app/models/book.model';
 import { BooksService } from 'src/app/services/books.service';
 
@@ -64,5 +65,6 @@ export class BookFormComponent implements OnInit {
   detectFiles(event) {
     this.onUploadFile(event.target.files[0]);
   }
+    
 
 }

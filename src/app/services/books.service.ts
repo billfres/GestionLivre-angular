@@ -54,6 +54,17 @@ export class BooksService {
   }
 
   removeBook(book: Book) {
+    if(book.photo) {
+      const storageRef = firebase.storage().refFromURL(book.photo);
+      storageRef.delete().then(
+        () => {
+          console.log('Photo removed!');
+        },
+        (error) => {
+          console.log('Could not remove photo! : ' + error);
+        }
+      );
+    }
     const bookIndexToRemove = this.books.findIndex(
       (bookEl) => {
         if(bookEl === book) {
@@ -64,7 +75,7 @@ export class BooksService {
     this.books.splice(bookIndexToRemove, 1);
     this.saveBooks();
     this.emitBooks();
-  }
+}
   
   //method to upload a file(photo)
   uploadFile(file: File) {
