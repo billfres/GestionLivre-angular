@@ -6,12 +6,17 @@
           <h3 class="list-group-item-heading">
             {{ book.title }}
             <button class="btn btn-default pull-right" (click)="onDeleteBook(book)">
-              <span class="glyphicon glyphicon-minus"></span>
+              <span class="glyphicon glyphicon-remove-sign"></span>
+            </button>
+            <button class="btn btn-default pull-right" (click)="onEditBook(book)">
+              <span class="glyphicon glyphicon-pencil"></span>
             </button>
             </h3>
             <p class="list-group-item-text">{{ book.author }}</p>
             </button>
         </div>
-        <button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>
+        <button class="btn btn-primary" (click)="onNewBook()">
+          <span class="glyphicon glyphicon-plus"></span> Nouveau livre
+        </button>
     </div>
 </div>
