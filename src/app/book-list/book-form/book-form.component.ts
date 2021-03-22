@@ -57,6 +57,12 @@ export class BookFormComponent implements OnInit {
         this.fileUploaded = true;
       }
     );
+  }
+
+  //méthode qui permettra de lier le  <input type="file">  (que vous créerez par la suite) 
+  //à la méthode  onUploadFile()
+  detectFiles(event) {
+    this.onUploadFile(event.target.files[0]);
 }
 
 }
