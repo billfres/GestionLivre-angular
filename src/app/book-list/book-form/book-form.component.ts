@@ -13,6 +13,11 @@ export class BookFormComponent implements OnInit {
 
   bookForm: FormGroup;
 
+  //pour uploader une photo
+  fileIsUploading = false;
+  fileUrl: string;
+  fileUploaded = false;
+
   constructor(private formBuilder: FormBuilder, private booksService: BooksService,
               private router: Router) { }
 
@@ -37,5 +42,18 @@ export class BookFormComponent implements OnInit {
     this.booksService.createNewBook(newBook);
     this.router.navigate(['/books']);
   }
+
+  onUploadFile(file: File) {
+    //fileIsUploading  pour désactiver le bouton submit du template pendant le chargement 
+    //du fichier afin d'éviter toute erreur
+    this.fileIsUploading = true;
+    this.booksService.uploadFile(file).then(
+      (url: string) => {
+        this.fileUrl = url;
+        this.fileIsUploading = false;
+        this.fileUploaded = true;
+      }
+    );
+}
 
 }
